@@ -99,16 +99,3 @@ BEGIN
     RETURN employee_id_var;
 END;
 /
-
-/*
-#5
-In the HR schema, write a script that utilizes the function created in exercise 4 to lookup the employee ID and the concatenated first and last names of dependents (separated by a space) for the employee with the following email address: bruce.ernst@fakecompany.com
-*/
-
-SELECT employee_id, d.first_name || ' ' || d.last_name AS dependent_name
-FROM employees e
-    JOIN dependents d on e.employee_id = d.employee_id
-WHERE email = get_employee_id('bruce.ernst@fakecompany.com');
-
-
--- I can't figure out how to get it to work?
